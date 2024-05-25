@@ -1,0 +1,28 @@
+{
+  "format": "custom",
+  "id": "gallery_images",
+  "label": "Gallery Images",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "gallery_image": {
+        "type": "Group",
+        "config": {
+          "label": "Gallery Image",
+          "repeat": true,
+          "fields": {
+            "img": {
+              "type": "Image",
+              "config": {
+                "label": "Img",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
