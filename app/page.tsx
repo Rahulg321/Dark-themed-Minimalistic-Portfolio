@@ -19,10 +19,18 @@ export default function Home() {
           logomarkNext.js community, an open-source web framework built with
           React.
         </p>
+        <p className="text-muted-foreground">
+          I'm fine-tuning my freelancing business, sharing more online, and
+          leveling up my design skills. I enjoy crafting components and
+          experiments for my lab.
+        </p>
+        <p className="text-muted-foreground">
+          If you'd like to collaborate, feel free to send me an email.
+        </p>
       </div>
 
       <div className="mb-12">
-        <h2 className="mb-6">Featured Projects 💻</h2>
+        <h3 className="mb-8">Featured Projects 💻</h3>
         <div className="space-y-6">
           <ProjectCard />
           <ProjectCard />
@@ -34,7 +42,7 @@ export default function Home() {
       </div>
 
       <div className="mb-12">
-        <h2 className="mb-4">Featured Posts ✒️</h2>
+        <h3 className="mb-8">Featured Posts ✒️</h3>
         <div className="space-y-6">
           <BlogCard />
           <BlogCard />
@@ -46,7 +54,7 @@ export default function Home() {
       </div>
 
       <div className="mb-12">
-        <h2 className="mb-4">Favorite Books 📖</h2>
+        <h3 className="mb-8">Favorite Books 📖</h3>
         <div className="space-y-6">
           <BookCard />
           <BookCard />
@@ -58,8 +66,17 @@ export default function Home() {
       </div>
 
       <div className="mb-12">
-        <h2 className="mb-4">My Goals ✈️</h2>
+        <h3 className="mb-8">My Goals ✈️</h3>
         <ImageGallery />
+      </div>
+
+      <div className="mb-12">
+        <h3 className="mb-8">Connect</h3>
+        <p className="text-muted-foreground">
+          Connect with me on Twitter, view my code and open-source projects on
+          Github, explore my Read.cv profile, or email me directly
+          atjulien.thibeaut@gmail.com.
+        </p>
       </div>
 
       <NewsletterComp />

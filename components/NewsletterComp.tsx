@@ -11,7 +11,7 @@ const NewsletterComp = () => {
         Join my newsletter to stay updated about the latest I'm working on and
         share resources I've come across.
       </span>
-      <div className="flex">
+      <div className="flex flex-col md:flex-row gap-2">
         <Input
           placeholder="yourname@example.com"
           className="p-4 bg-neutral-100 dark:bg-neutral-900  text-lg"

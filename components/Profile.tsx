@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import profile from "@/public/profile.png";
+import profile from "@/public/rahulFrontPic.jpg";
 import { ModeToggle } from "./theme-toggle";
 
 const Profile = () => {
