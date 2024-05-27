@@ -8,8 +8,8 @@ const NewsletterComp = () => {
     <Card className="p-4 space-y-4">
       <h2>Subscribe to my Newsletter</h2>
       <span className="block mb-2">
-        Join my newsletter to stay updated about the latest I'm working on and
-        share resources I've come across.
+        Join my newsletter to stay updated about the latest I&apos;m working on
+        and share resources I've come across.
       </span>
       <div className="flex flex-col md:flex-row gap-2">
         <Input
