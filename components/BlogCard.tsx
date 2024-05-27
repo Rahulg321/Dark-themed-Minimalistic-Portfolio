@@ -13,8 +13,8 @@ const BlogCard = ({ post }: BlogCardProps) => {
 
   return (
     <Link href={`/blogs/${post.uid}`}>
-      <article className="hover:bg-neutral-900 mb-2 cursor-pointer transition-all duration-300 px-4 py-2 rounded-lg">
-        <div className="flex justify-between items-center gap-2 sm:gap-4">
+      <article className="hover:bg-blue-200 dark:hover:bg-neutral-900 mb-2 cursor-pointer transition-all duration-300 px-4 py-2 rounded-lg">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-center  md:gap-4">
           <p className="">{title}</p>
           <span className="text-muted-foreground">{date}</span>
         </div>

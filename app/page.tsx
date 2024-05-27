@@ -20,6 +20,10 @@ export default async function Home() {
     limit: 3,
   });
 
+  const featuredbooks = await client.getAllByType("book", {
+    limit: 2,
+  });
+
   return (
     <>
       <Profile />
@@ -73,18 +77,21 @@ export default async function Home() {
 
       <div className="mb-12">
         <h3 className="mb-8">Favorite Books 📖</h3>
-        <div className="space-y-6">
-          <BookCard />
-          <BookCard />
-          <BookCard />
+        <div className="">
+          {featuredbooks.map((book) => (
+            <BookCard key={book.id} book={book} />
+          ))}
         </div>
-        <span className="text-muted-foreground underline text-base underline-offset-4 text-right block mt-12">
-          All Books
-        </span>
+        <Link
+          href="/books"
+          className="text-muted-foreground underline text-base underline-offset-4 text-right block mt-12"
+        >
+          Books I have read
+        </Link>
       </div>
 
       <div className="mb-12">
-        <h3 className="mb-8">My Goals ✈️</h3>
+        <h3 className="mb-8">Gallery 📷</h3>
         <ImageGallery />
       </div>
 

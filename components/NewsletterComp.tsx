@@ -5,7 +5,7 @@ import { Card } from "./ui/card";
 
 const NewsletterComp = () => {
   return (
-    <Card className="p-4 space-y-4">
+    <Card className="p-4 space-y-4 bg-blue-100 dark:bg-neutral-900">
       <h2>Subscribe to my Newsletter</h2>
       <span className="block mb-2">
         Join my newsletter to stay updated about the latest I am working on and
@@ -14,7 +14,7 @@ const NewsletterComp = () => {
       <div className="flex flex-col md:flex-row gap-2">
         <Input
           placeholder="yourname@example.com"
-          className="p-4 bg-neutral-100 dark:bg-neutral-900  text-lg"
+          className="p-4 bg-blue-50 dark:bg-neutral-800  text-lg"
         />
         <Button>Subscribe</Button>
       </div>

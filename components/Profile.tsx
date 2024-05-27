@@ -5,7 +5,7 @@ import { ModeToggle } from "./theme-toggle";
 
 const Profile = () => {
   return (
-    <div className="mb-12 flex justify-between items-center">
+    <div className="mb-12 flex flex-col-reverse gap-6 md:flex-row md:justify-between md:items-center">
       <div className="flex gap-2">
         <div className="relative  w-16 h-16">
           <Image

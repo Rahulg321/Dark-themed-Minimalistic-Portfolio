@@ -9,8 +9,8 @@ import Link from "next/link";
 const ProjectCard = ({ project }: { project: Content.ProjectDocument }) => {
   return (
     <Link href={`/projects/${project.uid}`}>
-      <div className="flex justify-between items-center hover:bg-neutral-900 cursor-pointer rounded-lg p-4">
-        <div className="flex gap-4">
+      <div className="flex justify-between items-center hover:bg-blue-200 dark:hover:bg-neutral-900 cursor-pointer rounded-lg p-4">
+        <div className="flex flex-col md:flex-row gap-4">
           <div>
             <PrismicNextImage
               field={project.data.featured_image}
@@ -25,7 +25,7 @@ const ProjectCard = ({ project }: { project: Content.ProjectDocument }) => {
             </p>
           </div>
         </div>
-        <div className="text-2xl dark:text-muted-foreground">
+        <div className="text-2xl hidden md:block dark:text-muted-foreground">
           <FaLink />
         </div>
       </div>

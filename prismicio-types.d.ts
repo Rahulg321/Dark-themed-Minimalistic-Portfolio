@@ -91,6 +91,122 @@ export type BlogpostDocument<Lang extends string = string> =
     Lang
   >;
 
+type BookDocumentDataSlicesSlice = never;
+
+/**
+ * Content for Book documents
+ */
+interface BookDocumentData {
+  /**
+   * Name field in *Book*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: book.name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Author field in *Book*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: book.author
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  author: prismic.KeyTextField;
+
+  /**
+   * Featured Image field in *Book*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: book.featured_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  featured_image: prismic.ImageField<never>;
+
+  /**
+   * Finished Date field in *Book*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: book.finished_date
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  finished_date: prismic.DateField;
+
+  /**
+   * Rating field in *Book*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: book.rating
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  rating: prismic.NumberField;
+
+  /**
+   * Slice Zone field in *Book*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: book.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<BookDocumentDataSlicesSlice> /**
+   * Meta Title field in *Book*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: book.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Book*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: book.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Book*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: book.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Book document from Prismic
+ *
+ * - **API ID**: `book`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type BookDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<BookDocumentData>, "book", Lang>;
+
 /**
  * Content for Category documents
  */
@@ -173,6 +289,7 @@ export type GalleryImagesDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | BookIndexSlice
   | ProjectIndexSlice
   | TextBlockSlice
   | HeroSlice
@@ -348,6 +465,7 @@ export type ProjectDocument<Lang extends string = string> =
 
 export type AllDocumentTypes =
   | BlogpostDocument
+  | BookDocument
   | CategoryDocument
   | GalleryImagesDocument
   | PageDocument
@@ -381,6 +499,36 @@ type BlogIndexSliceVariation = BlogIndexSliceDefault;
 export type BlogIndexSlice = prismic.SharedSlice<
   "blog_index",
   BlogIndexSliceVariation
+>;
+
+/**
+ * Default variation for BookIndex Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BookIndexSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *BookIndex*
+ */
+type BookIndexSliceVariation = BookIndexSliceDefault;
+
+/**
+ * BookIndex Shared Slice
+ *
+ * - **API ID**: `book_index`
+ * - **Description**: BookIndex
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BookIndexSlice = prismic.SharedSlice<
+  "book_index",
+  BookIndexSliceVariation
 >;
 
 /**
@@ -498,6 +646,9 @@ declare module "@prismicio/client" {
       BlogpostDocument,
       BlogpostDocumentData,
       BlogpostDocumentDataSlicesSlice,
+      BookDocument,
+      BookDocumentData,
+      BookDocumentDataSlicesSlice,
       CategoryDocument,
       CategoryDocumentData,
       GalleryImagesDocument,
@@ -513,6 +664,9 @@ declare module "@prismicio/client" {
       BlogIndexSlice,
       BlogIndexSliceVariation,
       BlogIndexSliceDefault,
+      BookIndexSlice,
+      BookIndexSliceVariation,
+      BookIndexSliceDefault,
       HeroSlice,
       HeroSliceVariation,
       HeroSliceDefault,

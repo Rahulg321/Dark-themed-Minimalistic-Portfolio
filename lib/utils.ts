@@ -34,3 +34,11 @@ export function formatPrismicTimestamp(prismicTimestamp: string): string {
   // Format the date as "23 August, 2024"
   return `${day} ${month}, ${year}`;
 }
+export function convertToDateString(dateStr: string): string {
+  const dateObj = new Date(dateStr);
+  return dateObj.toLocaleDateString("en-US", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+}

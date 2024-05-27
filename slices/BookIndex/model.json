@@ -1,0 +1,16 @@
+{
+  "id": "book_index",
+  "type": "SharedSlice",
+  "name": "BookIndex",
+  "description": "BookIndex",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}

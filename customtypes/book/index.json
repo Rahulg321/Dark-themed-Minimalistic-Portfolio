@@ -1,38 +1,58 @@
 {
   "format": "page",
-  "id": "page",
-  "label": "Page",
+  "id": "book",
+  "label": "Book",
   "repeatable": true,
   "status": true,
   "json": {
     "Main": {
+      "name": {
+        "type": "Text",
+        "config": {
+          "label": "Name",
+          "placeholder": ""
+        }
+      },
       "uid": {
         "config": {
           "label": "UID"
         },
         "type": "UID"
       },
+      "author": {
+        "type": "Text",
+        "config": {
+          "label": "Author",
+          "placeholder": ""
+        }
+      },
+      "featured_image": {
+        "type": "Image",
+        "config": {
+          "label": "Featured Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "finished_date": {
+        "type": "Date",
+        "config": {
+          "label": "Finished Date",
+          "placeholder": ""
+        }
+      },
+      "rating": {
+        "type": "Number",
+        "config": {
+          "label": "Rating",
+          "placeholder": ""
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {
-            "book_index": {
-              "type": "SharedSlice"
-            },
-            "project_index": {
-              "type": "SharedSlice"
-            },
-            "text_block": {
-              "type": "SharedSlice"
-            },
-            "hero": {
-              "type": "SharedSlice"
-            },
-            "blog_index": {
-              "type": "SharedSlice"
-            }
-          }
+          "choices": {}
         }
       }
     },
