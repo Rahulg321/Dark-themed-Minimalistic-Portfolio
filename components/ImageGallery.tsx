@@ -6,16 +6,12 @@ import React from "react";
 const ImageGallery = async () => {
   const client = createClient();
   const gallery = await client.getAllByType("gallery_images");
-  console.log(gallery[0].data);
   const images = gallery[0].data.gallery_image;
-  images.map((image) => {
-    console.log(image);
-  });
 
   return (
     <div className="columns-1 break-inside-avoid md:columns-2 lg:columns-3">
-      {images.map((image) => (
-        <div className="mb-2">
+      {images.map((image, index) => (
+        <div className="mb-2" key={index}>
           <PrismicNextImage field={image.img} />
         </div>
       ))}

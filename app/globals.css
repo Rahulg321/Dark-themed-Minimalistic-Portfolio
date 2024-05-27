@@ -102,8 +102,13 @@
   }
 }
 
-html {
-  font-family: var(--font-hind);
+body,
+html,
+p,
+span,
+ul,
+li {
+  font-family: var(--font-poppins);
 }
 
 h1,
@@ -123,6 +128,12 @@ h6 {
 .narrow-container {
   margin-inline: auto;
   width: min(80%, 45.5rem);
+}
+
+.parent-container {
+  display: grid;
+  min-height: 100dvh;
+  grid-template-rows: auto 1fr auto;
 }
 
 .block-space-large {

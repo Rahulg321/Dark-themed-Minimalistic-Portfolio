@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { hind, montserrat } from "./Fonts";
+import { poppins, montserrat } from "./Fonts";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,7 +20,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={clsx(montserrat.variable, hind.variable)}
+      className={clsx(montserrat.variable, poppins.variable)}
     >
       <body
         className={clsx("min-h-screen bg-background font-sans antialiased")}
@@ -35,7 +35,6 @@ export default function RootLayout({
             <div className="narrow-container block-space-large">
               {/* <Header /> */}
               {children}
-              <Footer />
             </div>
           </main>
         </ThemeProvider>

@@ -20,10 +20,16 @@ const Footer = () => {
         <span className="text-center flex items-center text-muted-foreground justify-center">
           Inspired by
         </span>
-        <div className="flex flex-col md:flex-row gap-6 items-center justify-center mt-2 text-muted-foreground">
-          <InspiredText text="Lee Robinson" textLink={""} />{" "}
-          <InspiredText text="Hosna Qasmei" textLink={""} />
-          <InspiredText text="Julien Thibeaut" textLink={""} />
+        <div className="flex flex-col md:flex-row gap-2 md:gap-6 items-center justify-center mt-2 text-muted-foreground">
+          <InspiredText text="Lee Robinson" textLink={"https://leerob.io/"} />{" "}
+          <InspiredText
+            text="Hosna Qasmei"
+            textLink={"https://hosnaqasmei.com/"}
+          />
+          <InspiredText
+            text="Julien Thibeaut"
+            textLink={"https://www.ibelick.com/"}
+          />
         </div>
       </div>
     </footer>
@@ -37,6 +43,8 @@ function SocialMediaLink({ icon, link }: { icon: any; link: string }) {
     <Link
       href={link}
       className="text-2xl text-muted-foreground transition duration-300 ease-in-out hover:text-gray-200"
+      target="_blank"
+      rel="noopener noreferrer"
     >
       {icon}
     </Link>
@@ -48,6 +56,8 @@ function InspiredText({ text, textLink }: { text: string; textLink: string }) {
     <Link
       href={textLink}
       className="ml-1 hover:text-gray-300 transition duration-300 hover:underline ease-in-out underline-offset-2"
+      target="_blank"
+      rel="noopener noreferrer"
     >
       {text}
     </Link>

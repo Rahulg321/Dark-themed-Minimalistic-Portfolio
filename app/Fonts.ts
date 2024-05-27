@@ -7,9 +7,9 @@ export const montserrat = Montserrat({
   fallback: ["system-ui", "arial"],
 });
 
-export const hind = Hind({
+export const poppins = Poppins({
   subsets: ["latin"],
-  variable: "--font-hind",
+  variable: "--font-poppins",
   weight: ["300", "400", "500", "600", "700"],
   fallback: ["system-ui", "arial"],
 });

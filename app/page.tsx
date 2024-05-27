@@ -1,13 +1,25 @@
 import BlogCard from "@/components/BlogCard";
 import BookCard from "@/components/BookCard";
+import Footer from "@/components/Footer";
 import ImageGallery from "@/components/ImageGallery";
 import NewsletterComp from "@/components/NewsletterComp";
 import Profile from "@/components/Profile";
 import ProjectCard from "@/components/ProjectCard";
 import { ModeToggle } from "@/components/theme-toggle";
+import { createClient } from "@/prismicio";
 import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+export default async function Home() {
+  const client = createClient();
+  const featuredProjects = await client.getAllByType("project", {
+    limit: 3,
+  });
+
+  const featuredblogposts = await client.getAllByType("blogpost", {
+    limit: 3,
+  });
+
   return (
     <>
       <Profile />
@@ -31,26 +43,32 @@ export default function Home() {
 
       <div className="mb-12">
         <h3 className="mb-8">Featured Projects 💻</h3>
-        <div className="space-y-6">
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
+        <div className="">
+          {featuredProjects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
         </div>
-        <span className="text-muted-foreground underline text-base underline-offset-4 text-right block my-4">
+        <Link
+          href="/projects"
+          className="text-muted-foreground underline text-base underline-offset-4 text-right block my-4"
+        >
           All Projects
-        </span>
+        </Link>
       </div>
 
       <div className="mb-12">
-        <h3 className="mb-8">Featured Posts ✒️</h3>
-        <div className="space-y-6">
-          <BlogCard />
-          <BlogCard />
-          <BlogCard />
+        <h3 className="mb-8">Featured Blogs ✒️</h3>
+        <div className="">
+          {featuredblogposts.map((post) => (
+            <BlogCard key={post.id} post={post} />
+          ))}
         </div>
-        <span className="text-muted-foreground underline text-base underline-offset-4 text-right block mt-12">
-          All Posts
-        </span>
+        <Link
+          href="/blogs"
+          className="text-muted-foreground underline text-base underline-offset-4 text-right block mt-12"
+        >
+          All Blogs
+        </Link>
       </div>
 
       <div className="mb-12">
@@ -80,6 +98,8 @@ export default function Home() {
       </div>
 
       <NewsletterComp />
+
+      <Footer />
     </>
   );
 }

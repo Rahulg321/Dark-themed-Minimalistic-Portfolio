@@ -7,6 +7,7 @@ const config = {
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
+    "./slices/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -77,6 +78,7 @@ const config = {
   plugins: [
     require("tailwindcss-animate"),
     require("@tailwindcss/aspect-ratio"),
+    require("@tailwindcss/typography"),
   ],
 } satisfies Config;
 

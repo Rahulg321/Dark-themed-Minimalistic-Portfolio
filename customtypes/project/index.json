@@ -1,30 +1,44 @@
 {
   "format": "page",
-  "id": "blogpost",
-  "label": "Blogpost",
+  "id": "project",
+  "label": "Project",
   "repeatable": true,
   "status": true,
   "json": {
     "Main": {
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": ""
+        }
+      },
       "uid": {
         "config": {
           "label": "UID"
         },
         "type": "UID"
       },
-      "title": {
-        "type": "Text",
+      "date_completed": {
+        "type": "Date",
         "config": {
-          "label": "title",
+          "label": "Date Completed",
           "placeholder": ""
         }
       },
-      "category": {
-        "type": "Link",
+      "description": {
+        "type": "Text",
         "config": {
-          "label": "Category",
-          "select": "document",
-          "customtypes": ["category"]
+          "label": "Description",
+          "placeholder": ""
+        }
+      },
+      "featured_image": {
+        "type": "Image",
+        "config": {
+          "label": "Featured Image",
+          "constraint": {},
+          "thumbnails": []
         }
       },
       "slices": {
@@ -40,6 +54,13 @@
       }
     },
     "SEO & Metadata": {
+      "meta_title": {
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        },
+        "type": "Text"
+      },
       "meta_description": {
         "config": {
           "label": "Meta Description",
@@ -57,13 +78,6 @@
           "thumbnails": []
         },
         "type": "Image"
-      },
-      "meta_title": {
-        "config": {
-          "label": "Meta Title",
-          "placeholder": "A title of the page used for social media and search engines"
-        },
-        "type": "Text"
       }
     }
   }
