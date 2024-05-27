@@ -31,17 +31,26 @@ export default async function Home() {
         <h2 className="mb-8">hey, I am Rahul 👋</h2>
         <p className="text-muted-foreground">
           I am a frontend developer, optimist, and community builder. I
-          currently work as the VP of Product at Vercel, where I help teach the
-          Next.js logomarkNext.js community, an open-source web framework built
-          with React.
+          currently specialize in building marketing websites for companies
+          using Next.js and Prismic. With two years of coding experience, I am
+          now a full-time freelancer actively seeking job opportunities.
         </p>
         <p className="text-muted-foreground">
           I am fine-tuning my freelancing business, sharing more online, and
           leveling up my design skills. I enjoy crafting components and
-          experiments for my lab.
+          experimenting new things.
         </p>
         <p className="text-muted-foreground">
-          If you would like to collaborate, feel free to send me an email.
+          If you would like to collaborate, feel free to send me an{" "}
+          <Link
+            href="mailto:rg5353070@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline text-black dark:text-white"
+          >
+            email
+          </Link>
+          .
         </p>
       </div>
 
@@ -99,9 +108,14 @@ export default async function Home() {
         <h3 className="mb-8">Connect</h3>
         <p className="text-muted-foreground">
           Connect with me on Twitter, view my code and open-source projects on
-          Github, explore my Read.cv profile, or email me directly
-          atjulien.thibeaut@gmail.com.
+          Github, explore my Read.cv profile
         </p>
+        <span className="block mb-2 text-muted-foreground">
+          Email me at{" "}
+          <div className="font-bold inline text-black dark:text-white">
+            rg5353070@gmail.com
+          </div>
+        </span>
       </div>
 
       <NewsletterComp />
