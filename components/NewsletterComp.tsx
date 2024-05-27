@@ -9,7 +9,7 @@ const NewsletterComp = () => {
       <h2>Subscribe to my Newsletter</h2>
       <span className="block mb-2">
         Join my newsletter to stay updated about the latest I am working on and
-        share resources I've come across.
+        to share resources.
       </span>
       <div className="flex flex-col md:flex-row gap-2">
         <Input
