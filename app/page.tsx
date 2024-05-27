@@ -24,20 +24,20 @@ export default async function Home() {
     <>
       <Profile />
       <div className="mb-12">
-        <h2 className="mb-8">hey, I'm Rahul 👋</h2>
+        <h2 className="mb-8">hey, I am Rahul 👋</h2>
         <p className="text-muted-foreground">
-          I'm a frontend developer, optimist, and community builder. I currently
-          work as the VP of Product at Vercel, where I help teach the Next.js
-          logomarkNext.js community, an open-source web framework built with
-          React.
+          I am a frontend developer, optimist, and community builder. I
+          currently work as the VP of Product at Vercel, where I help teach the
+          Next.js logomarkNext.js community, an open-source web framework built
+          with React.
         </p>
         <p className="text-muted-foreground">
-          I'm fine-tuning my freelancing business, sharing more online, and
+          I am fine-tuning my freelancing business, sharing more online, and
           leveling up my design skills. I enjoy crafting components and
           experiments for my lab.
         </p>
         <p className="text-muted-foreground">
-          If you'd like to collaborate, feel free to send me an email.
+          If you would like to collaborate, feel free to send me an email.
         </p>
       </div>
 
