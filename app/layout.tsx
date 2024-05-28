@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { poppins, montserrat } from "./Fonts";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -46,6 +47,7 @@ export default function RootLayout({
           </main>
         </ThemeProvider>
       </body>
+      <GoogleAnalytics gaId="G-DENGLRLTGH" />
     </html>
   );
 }
