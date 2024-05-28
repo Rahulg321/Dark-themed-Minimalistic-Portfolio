@@ -12,17 +12,19 @@ import Link from "next/link";
 
 export default async function Home() {
   const client = createClient();
-  const featuredProjects = await client.getAllByType("project", {
-    limit: 3,
-  });
-
-  const featuredblogposts = await client.getAllByType("blogpost", {
-    limit: 3,
-  });
-
-  const featuredbooks = await client.getAllByType("book", {
-    limit: 2,
-  });
+  //wrap the fetch calls in a promise.all to avoid blocking the page
+  const [featuredProjects, featuredblogposts, featuredbooks] =
+    await Promise.all([
+      client.getAllByType("project", {
+        limit: 3,
+      }),
+      client.getAllByType("blogpost", {
+        limit: 3,
+      }),
+      client.getAllByType("book", {
+        limit: 2,
+      }),
+    ]);
 
   return (
     <>
