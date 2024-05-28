@@ -1,13 +1,14 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SliceZone } from "@prismicio/react";
-
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa6";
 import NewsletterComp from "@/components/NewsletterComp";
 import { formatPrismicTimestamp } from "@/lib/utils";
+import * as prismic from "@prismicio/client";
+import Head from "next/head";
 
 type Params = { uid: string };
 
@@ -19,8 +20,29 @@ export default async function Page({ params }: { params: Params }) {
 
   const publishedDate = formatPrismicTimestamp(page.first_publication_date);
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: page.data.title as string,
+    author: {
+      "@type": "Person",
+      name: "Rahul Gupta",
+      // The full URL must be provided, including the website's domain.
+      url: new URL("https://rahulguptadev.in/about"),
+    },
+    image: prismic.asImageSrc(page.data.featured_image),
+    datePublished: page.first_publication_date,
+    dateModified: page.last_publication_date,
+  };
+
   return (
     <>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      </Head>
       <Link
         href="/blogs"
         className="text-muted-foreground flex items-center gap-2 mb-4"

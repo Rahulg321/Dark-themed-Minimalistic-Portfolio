@@ -7,6 +7,7 @@ import Profile from "@/components/Profile";
 import ProjectCard from "@/components/ProjectCard";
 import { ModeToggle } from "@/components/theme-toggle";
 import { createClient } from "@/prismicio";
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -26,8 +27,38 @@ export default async function Home() {
       }),
     ]);
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    mainEntity: {
+      "@id": "#main-author",
+      "@type": "Person",
+      name: "Rahul Gupta",
+      url: new URL("https://rahulguptadev.in"),
+    },
+    hasPart: [
+      {
+        "@type": "Article",
+        headline: "Introduction:Meet Rahul Gupta",
+        url: "https://rahulguptadev.in/blogs/introduction-meet-rahul-gupta",
+        datePublished: "2024-05-28T16:00:00Z",
+        author: { "@id": "#main-author" },
+      },
+    ],
+    description: "A frontend developer, optimist, and community builder.",
+    image: "https://rahulguptadev.in/favicon.ico",
+    dateCreated: "2024-05-28T16:00:00Z",
+    dateModified: "2024-05-28T16:00:00Z",
+  };
+
   return (
     <>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      </Head>
       <Profile />
       <div className="mb-12">
         <h2 className="mb-8">hey, I am Rahul 👋</h2>

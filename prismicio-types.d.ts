@@ -33,6 +33,17 @@ interface BlogpostDocumentData {
   category: prismic.ContentRelationshipField<"category">;
 
   /**
+   * Featured Image field in *Blogpost*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogpost.featured_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  featured_image: prismic.ImageField<never>;
+
+  /**
    * Slice Zone field in *Blogpost*
    *
    * - **Field Type**: Slice Zone
