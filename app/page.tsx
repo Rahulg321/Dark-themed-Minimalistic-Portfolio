@@ -140,8 +140,15 @@ export default async function Home() {
       <div className="mb-12">
         <h3 className="mb-8">Connect</h3>
         <p className="text-muted-foreground">
-          Connect with me on Twitter, view my code and open-source projects on
-          Github, explore my Read.cv profile
+          Connect with me on{" "}
+          <Link
+            href={"/twitter"}
+            className="text-black hover:underline dark:text-white"
+          >
+            Twitter
+          </Link>
+          , view my code and open-source projects on Github, explore my Read.cv
+          profile
         </p>
         <span className="block mb-2 text-muted-foreground">
           Email me at{" "}
