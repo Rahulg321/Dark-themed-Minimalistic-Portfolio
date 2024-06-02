@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { poppins, montserrat } from "./Fonts";
+import { poppins, montserrat, syne } from "./Fonts";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -28,7 +28,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={clsx(montserrat.variable, poppins.variable)}
+      className={clsx(montserrat.variable, poppins.variable, syne.variable)}
     >
       <body
         className={clsx("min-h-screen bg-background font-sans antialiased")}

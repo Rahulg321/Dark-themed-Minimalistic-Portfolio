@@ -68,6 +68,7 @@ export default async function Home() {
           using Next.js and Prismic. With two years of coding experience, I am
           now a full-time freelancer actively seeking job opportunities.
         </p>
+
         <p className="text-muted-foreground">
           I am fine-tuning my freelancing business, sharing more online, and
           leveling up my design skills. I enjoy crafting components and
