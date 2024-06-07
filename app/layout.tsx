@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { poppins, montserrat, syne, inter } from "./Fonts";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { Toaster } from "@/components/ui/toaster";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -48,6 +49,7 @@ export default function RootLayout({
             </div>
           </div>
         </main>
+        <Toaster />
       </body>
       <GoogleAnalytics gaId="G-DENGLRLTGH" />
     </html>

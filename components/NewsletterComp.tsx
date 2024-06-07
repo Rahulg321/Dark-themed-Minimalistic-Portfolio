@@ -1,12 +1,17 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
 import { sendGAEvent } from "@next/third-parties/google";
+import { addMemberToAudience } from "@/app/actions";
+import { useToast } from "./ui/use-toast";
 
 const NewsletterComp = () => {
+  const { toast } = useToast();
+  const [newsletter, setNewsletter] = useState("");
+
   return (
     <Card className="p-4 space-y-4 bg-blue-100 dark:bg-neutral-900">
       <h2>Subscribe to my Newsletter</h2>
@@ -17,12 +22,29 @@ const NewsletterComp = () => {
 
       <div className="flex flex-col md:flex-row gap-2">
         <Input
+          type="email"
           placeholder="yourname@example.com"
           className="p-4 bg-blue-50 dark:bg-neutral-800  text-lg"
+          value={newsletter}
+          onChange={(e) => setNewsletter(e.target.value)}
         />
         <Button
-          onClick={() => {
-            sendGAEvent({ event: "newsletter_subscribe", value: "true" });
+          onClick={async () => {
+            console.log("email value is: " + newsletter);
+            const response = await addMemberToAudience(newsletter);
+            if (response.success) {
+              toast({
+                title: "Subcsribed 🎉",
+                description: "Thank you for subscribing to my newsletter!",
+              });
+              setNewsletter("");
+            } else {
+              toast({
+                title: "Error ❌",
+                description: "Could not subscribe to newsletter.",
+                variant: "destructive",
+              });
+            }
           }}
         >
           Subscribe
