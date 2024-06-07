@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { poppins, montserrat, syne } from "./Fonts";
+import { poppins, montserrat, syne, inter } from "./Fonts";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -28,24 +28,26 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={clsx(montserrat.variable, poppins.variable, syne.variable)}
+      className={clsx(
+        montserrat.variable,
+        poppins.variable,
+        syne.variable,
+        inter.variable
+      )}
     >
       <body
-        className={clsx("min-h-screen bg-background font-sans antialiased")}
+        className={clsx(
+          "min-h-screen bg-background font-sans dark antialiased"
+        )}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <main>
+        <main className="relative">
+          <div className="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
             <div className="narrow-container block-space-large">
               {/* <Header /> */}
               {children}
             </div>
-          </main>
-        </ThemeProvider>
+          </div>
+        </main>
       </body>
       <GoogleAnalytics gaId="G-DENGLRLTGH" />
     </html>

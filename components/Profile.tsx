@@ -21,9 +21,6 @@ const Profile = () => {
           <p>Software Engineer</p>
         </div>
       </div>
-      <div>
-        <ModeToggle />
-      </div>
     </div>
   );
 };
