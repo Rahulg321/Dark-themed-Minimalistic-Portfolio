@@ -28,7 +28,6 @@ export default function Template({ children }: { children: React.ReactNode }) {
     { scope: container }
   );
 
-  console.log("page transition occured", path);
   return (
     <div ref={container}>
       <div className="container">{children}</div>

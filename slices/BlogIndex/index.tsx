@@ -38,20 +38,6 @@ const BlogIndex = async ({ slice }: BlogIndexProps) => {
       <div className="">
         <CategoryList categories={categories} />
       </div>
-
-      <Suspense
-        fallback={
-          <>
-            <div className="space-y-4">
-              <BlogCardSkeleton />
-              <BlogCardSkeleton />
-              <BlogCardSkeleton />
-            </div>
-          </>
-        }
-      >
-        <FetchBlogPosts />
-      </Suspense>
     </section>
   );
 };

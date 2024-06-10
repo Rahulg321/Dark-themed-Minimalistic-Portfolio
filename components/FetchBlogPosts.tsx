@@ -1,24 +1,16 @@
-"use client";
-
 import { createClient } from "@/prismicio";
 import React from "react";
 import BlogCard from "./BlogCard";
-import { useSearchParams } from "next/navigation";
 import * as prismic from "@prismicio/client";
-import { formatPrismicTimestamp } from "@/lib/utils";
 
-const FetchBlogPosts = async () => {
-  //set a timeout of 3 seconds
-  // await new Promise((resolve) => setTimeout(resolve, 3000));
-  const searchParams = useSearchParams();
-  const tag = searchParams.get("tag") ?? "all";
+const FetchBlogPosts = async ({ searchTag }: { searchTag: string }) => {
   const client = createClient();
   let blogposts;
 
-  if (tag === "all") {
+  if (searchTag === "all") {
     blogposts = await client.getAllByType("blogpost");
   } else {
-    const category = await client.getByUID("category", tag);
+    const category = await client.getByUID("category", searchTag);
     blogposts = await client.getAllByType("blogpost", {
       filters: [prismic.filter.at("my.blogpost.category", category.id)],
     });
