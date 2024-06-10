@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import { poppins, montserrat, syne, inter } from "./Fonts";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Toaster } from "@/components/ui/toaster";
+import { ViewTransitions } from "next-view-transitions";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
