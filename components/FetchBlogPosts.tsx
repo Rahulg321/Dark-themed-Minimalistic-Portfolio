@@ -3,6 +3,8 @@ import React from "react";
 import BlogCard from "./BlogCard";
 import * as prismic from "@prismicio/client";
 
+export const dynamic = "force-dynamic";
+
 const FetchBlogPosts = async ({ searchTag }: { searchTag: string }) => {
   const client = createClient();
   let blogposts;
