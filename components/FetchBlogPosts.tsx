@@ -2,10 +2,10 @@ import { createClient } from "@/prismicio";
 import React from "react";
 import BlogCard from "./BlogCard";
 import * as prismic from "@prismicio/client";
-
-export const dynamic = "force-dynamic";
+import { unstable_noStore } from "next/cache";
 
 const FetchBlogPosts = async ({ searchTag }: { searchTag: string }) => {
+  unstable_noStore();
   const client = createClient();
   let blogposts;
 
