@@ -20,6 +20,8 @@ const FetchBlogPosts = async ({ searchTag }: { searchTag: string }) => {
     return <div>No blog posts found.</div>;
   }
 
+  console.log(blogposts);
+
   return (
     <div className="">
       {blogposts.map((post) => {
