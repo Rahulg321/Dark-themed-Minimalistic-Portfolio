@@ -8,6 +8,8 @@ import CategoryList from "@/components/CategoryList";
 import BlogCardSkeleton from "@/components/skeletons/BlogCardSkeleton";
 import FetchBlogPosts from "@/components/FetchBlogPosts";
 
+export const dynamic = "force-dynamic";
+
 const page = async ({
   searchParams,
 }: {
@@ -35,16 +37,14 @@ const page = async ({
 
       <Suspense
         fallback={
-          <>
-            <div className="space-y-4">
-              <BlogCardSkeleton />
-              <BlogCardSkeleton />
-              <BlogCardSkeleton />
-              <BlogCardSkeleton />
-              <BlogCardSkeleton />
-              <BlogCardSkeleton />
-            </div>
-          </>
+          <div className="space-y-4">
+            <BlogCardSkeleton />
+            <BlogCardSkeleton />
+            <BlogCardSkeleton />
+            <BlogCardSkeleton />
+            <BlogCardSkeleton />
+            <BlogCardSkeleton />
+          </div>
         }
       >
         <FetchBlogPosts searchTag={tag} />
