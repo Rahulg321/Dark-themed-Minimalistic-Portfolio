@@ -128,7 +128,7 @@ h6 {
 
 .narrow-container {
   margin-inline: auto;
-  width: min(80%, 45.5rem);
+  width: min(90%, 45.5rem);
 }
 
 .parent-container {

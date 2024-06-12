@@ -28,34 +28,32 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <TransitionProvider>
-      <html
-        lang="en"
-        suppressHydrationWarning
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={clsx(
+        montserrat.variable,
+        poppins.variable,
+        syne.variable,
+        inter.variable
+      )}
+    >
+      <body
         className={clsx(
-          montserrat.variable,
-          poppins.variable,
-          syne.variable,
-          inter.variable
+          "min-h-screen bg-background font-sans dark antialiased"
         )}
       >
-        <body
-          className={clsx(
-            "min-h-screen bg-background font-sans dark antialiased"
-          )}
-        >
-          <main className="relative">
-            <div className="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
-              <div className="narrow-container block-space-large">
-                {/* <Header /> */}
-                {children}
-              </div>
+        <main className="relative">
+          <div className="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
+            <div className="narrow-container block-space-large">
+              {/* <Header /> */}
+              {children}
             </div>
-          </main>
-          <Toaster />
-        </body>
-        <GoogleAnalytics gaId="G-DENGLRLTGH" />
-      </html>
-    </TransitionProvider>
+          </div>
+        </main>
+        <Toaster />
+      </body>
+      <GoogleAnalytics gaId="G-DENGLRLTGH" />
+    </html>
   );
 }
