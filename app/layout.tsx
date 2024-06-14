@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { poppins, montserrat, syne, inter } from "./Fonts";
+import { montserrat, syne } from "./Fonts";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Toaster } from "@/components/ui/toaster";
 import { ViewTransitions } from "next-view-transitions";
@@ -31,12 +31,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={clsx(
-        montserrat.variable,
-        poppins.variable,
-        syne.variable,
-        inter.variable
-      )}
+      className={clsx(montserrat.variable, syne.variable)}
     >
       <body
         className={clsx(
