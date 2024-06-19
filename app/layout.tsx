@@ -35,11 +35,11 @@ export default function RootLayout({
     >
       <body
         className={clsx(
-          "min-h-screen bg-background font-sans dark antialiased"
+          "min-h-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] font-sans dark antialiased"
         )}
       >
         <main className="relative">
-          <div className="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
+          <div className="">
             <div className="narrow-container block-space-large">
               {/* <Header /> */}
               {children}
