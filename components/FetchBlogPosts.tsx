@@ -5,7 +5,6 @@ import * as prismic from "@prismicio/client";
 import { unstable_noStore } from "next/cache";
 
 const FetchBlogPosts = async ({ searchTag }: { searchTag: string }) => {
-  unstable_noStore();
   const client = createClient();
   let blogposts;
 
@@ -21,8 +20,6 @@ const FetchBlogPosts = async ({ searchTag }: { searchTag: string }) => {
   if (blogposts.length === 0) {
     return <div>No blog posts found.</div>;
   }
-
-  console.log(blogposts);
 
   return (
     <div className="">

@@ -7,8 +7,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import CategoryList from "@/components/CategoryList";
 import BlogCardSkeleton from "@/components/skeletons/BlogCardSkeleton";
 import FetchBlogPosts from "@/components/FetchBlogPosts";
-
-export const dynamic = "force-dynamic";
+import FetchCategories from "@/components/FetchCategories";
 
 const page = async ({
   searchParams,
@@ -17,8 +16,6 @@ const page = async ({
     tag?: string;
   };
 }) => {
-  const client = createClient();
-  const categories = await client.getAllByType("category");
   const tag = searchParams?.tag || "all";
 
   return (
@@ -32,7 +29,9 @@ const page = async ({
       </Link>
       <h1 className="">All Blogs</h1>
       <div className="">
-        <CategoryList categories={categories} />
+        <Suspense fallback={<div>Loading Categories</div>}>
+          <FetchCategories />
+        </Suspense>
       </div>
 
       <Suspense
