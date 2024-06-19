@@ -26,7 +26,6 @@ const RatingBookCard = ({ book }: { book: Content.BookDocument }) => {
               <IoStarSharp key={index} className="text-yellow-500 text-xl" />
             ))}
         </div>
-        <span className="block text-muted-foreground">Finished {date}</span>
       </div>
     </div>
   );
