@@ -1,5 +1,6 @@
 import RatingBookCard from "@/components/RatingBookCard";
 import BlogCardSkeleton from "@/components/skeletons/BlogCardSkeleton";
+import BookCardSkeleton from "@/components/skeletons/BookCardSkeleton";
 import { createClient } from "@/prismicio";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
@@ -34,10 +35,13 @@ const BookIndex = ({ slice }: BookIndexProps): JSX.Element => {
       <Suspense
         fallback={
           <>
-            <div className="space-y-4">
-              <BlogCardSkeleton />
-              <BlogCardSkeleton />
-              <BlogCardSkeleton />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <BookCardSkeleton />
+              <BookCardSkeleton />
+              <BookCardSkeleton />
+              <BookCardSkeleton />
+              <BookCardSkeleton />
+              <BookCardSkeleton />
             </div>
           </>
         }
@@ -51,6 +55,7 @@ const BookIndex = ({ slice }: BookIndexProps): JSX.Element => {
 export default BookIndex;
 
 async function FetchBooks() {
+  // await for 3 seconds
   const client = createClient();
   const books = await client.getAllByType("book");
   return (
