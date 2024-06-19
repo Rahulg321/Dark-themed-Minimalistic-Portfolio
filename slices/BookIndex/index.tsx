@@ -31,7 +31,7 @@ const BookIndex = ({ slice }: BookIndexProps): JSX.Element => {
         Go Back
       </Link>
       <h1 className="mb-2">Books I&#39;ve Read</h1>
-      <span>Here is a list of all the books I&#39;ve read.</span>
+      <span>Here is a curated list of all the books I&#39;ve read.</span>
       <Suspense
         fallback={
           <>
