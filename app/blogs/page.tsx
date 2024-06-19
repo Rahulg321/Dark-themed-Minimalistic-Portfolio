@@ -9,6 +9,8 @@ import BlogCardSkeleton from "@/components/skeletons/BlogCardSkeleton";
 import FetchBlogPosts from "@/components/FetchBlogPosts";
 import FetchCategories from "@/components/FetchCategories";
 
+export const dynamic = "force-dynamic";
+
 const page = async ({
   searchParams,
 }: {
@@ -29,7 +31,11 @@ const page = async ({
       </Link>
       <h1 className="">All Blogs</h1>
       <div className="">
-        <Suspense fallback={<div>Loading Categories</div>}>
+        <Suspense
+          fallback={
+            <span className="text-muted-foreground">Loading Categories</span>
+          }
+        >
           <FetchCategories />
         </Suspense>
       </div>
