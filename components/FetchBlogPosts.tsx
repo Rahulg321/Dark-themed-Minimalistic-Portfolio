@@ -2,10 +2,8 @@ import { createClient } from "@/prismicio";
 import React from "react";
 import BlogCard from "./BlogCard";
 import * as prismic from "@prismicio/client";
-import { unstable_noStore as noStore } from "next/cache";
 
 const FetchBlogPosts = async ({ searchTag }: { searchTag: string }) => {
-  noStore();
   const client = createClient();
   let blogposts;
 

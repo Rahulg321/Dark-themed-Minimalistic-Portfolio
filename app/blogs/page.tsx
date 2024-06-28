@@ -9,9 +9,6 @@ import BlogCardSkeleton from "@/components/skeletons/BlogCardSkeleton";
 import FetchBlogPosts from "@/components/FetchBlogPosts";
 import FetchCategories from "@/components/FetchCategories";
 
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
-
 const page = async ({
   searchParams,
 }: {
