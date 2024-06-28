@@ -143,12 +143,31 @@ export default async function Home() {
         <p className="text-muted-foreground">
           Connect with me on{" "}
           <Link
-            href={"/twitter"}
+            href={"https://x.com/rg5353070"}
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-black hover:underline dark:text-white"
           >
             Twitter
           </Link>
-          , view my code and open-source projects on Github, explore my Read.cv
+          , view my code and open-source projects on{" "}
+          <Link
+            href={"https://github.com/Rahulg321"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-black hover:underline dark:text-white"
+          >
+            Github
+          </Link>
+          , explore my{" "}
+          <Link
+            href={"https://read.cv/rg5353070"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-black hover:underline dark:text-white"
+          >
+            Read.cv
+          </Link>
           profile
         </p>
         <span className="block mb-2 text-muted-foreground">
