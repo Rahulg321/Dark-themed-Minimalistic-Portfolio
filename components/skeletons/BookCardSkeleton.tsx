@@ -3,7 +3,7 @@ import { Skeleton } from "../ui/skeleton";
 
 const BookCardSkeleton = () => {
   return (
-    <Skeleton className="w-full h-[150px] bg-blue-100 dark:bg-neutral-800 rounded-lg" />
+    <Skeleton className="w-full h-[150px] bg-muted dark:bg-slate-800 rounded-lg" />
   );
 };
 

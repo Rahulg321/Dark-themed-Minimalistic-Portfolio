@@ -3,12 +3,11 @@ import project from "@/public/project.webp";
 import Image from "next/image";
 import { FaLink } from "react-icons/fa6";
 import { Content, ImageField, KeyTextField } from "@prismicio/client";
-import { PrismicNextImage } from "@prismicio/next";
-import Link from "next/link";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 
 const ProjectCard = ({ project }: { project: Content.ProjectDocument }) => {
   return (
-    <Link href={`/projects/${project.uid}`}>
+    <PrismicNextLink field={project.data.project_link}>
       <div className="flex justify-between items-center hover:bg-muted dark:hover:bg-slate-800 transition-all duration-300 ease-in-out cursor-pointer rounded-lg p-4">
         <div className="flex flex-col md:flex-row gap-4">
           <div>
@@ -29,7 +28,7 @@ const ProjectCard = ({ project }: { project: Content.ProjectDocument }) => {
           <FaLink />
         </div>
       </div>
-    </Link>
+    </PrismicNextLink>
   );
 };
 
