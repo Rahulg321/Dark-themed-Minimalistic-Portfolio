@@ -12,7 +12,7 @@ const Profile = () => {
             src={profile}
             alt="profile"
             fill={true}
-            className="border-2 object-cover border-black dark:border-gray-300 rounded-full"
+            className="border-2 object-cover rounded-full"
           />
         </div>
 
