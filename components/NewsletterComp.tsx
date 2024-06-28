@@ -13,7 +13,7 @@ const NewsletterComp = () => {
   const [newsletter, setNewsletter] = useState("");
 
   return (
-    <Card className="p-4 space-y-4 bg-muted dark:bg-slate-900">
+    <Card className="p-4 bg-muted dark:bg-card space-y-4">
       <h2>Subscribe to my Newsletter</h2>
       <span className="block mb-2">
         Join my newsletter to stay updated about the latest I am working on and
@@ -24,7 +24,7 @@ const NewsletterComp = () => {
         <Input
           type="email"
           placeholder="yourname@example.com"
-          className="p-4 dark:bg-slate-800"
+          className="p-4"
           value={newsletter}
           onChange={(e) => setNewsletter(e.target.value)}
         />
