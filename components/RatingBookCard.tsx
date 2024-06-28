@@ -10,7 +10,7 @@ const RatingBookCard = ({ book }: { book: Content.BookDocument }) => {
   const rating = book.data.rating as number;
 
   return (
-    <div className="border-2 p-2 bg-blue-100 dark:bg-neutral-900">
+    <div className="border-2 p-2 bg-muted dark:bg-slate-900">
       <div className="relative w-full h-48 aspect-w-1 aspect-h-1 mb-2">
         <PrismicNextImage field={book.data.featured_image} fill className="" />
       </div>

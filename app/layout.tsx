@@ -2,13 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 import clsx from "clsx";
 import { ThemeProvider } from "@/components/theme-provider";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { montserrat, syne } from "./Fonts";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Toaster } from "@/components/ui/toaster";
-import { ViewTransitions } from "next-view-transitions";
-import TransitionProvider from "@/lib/store/transition-context";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -27,6 +23,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // <div class="relative h-full w-full bg-slate-950"><div class="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]"></div></div>
   return (
     <html
       lang="en"
@@ -35,18 +32,20 @@ export default function RootLayout({
     >
       <body
         className={clsx(
-          "min-h-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] font-sans dark antialiased"
+          "min-h-screen bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem] dark:bg-slate-950 dark:bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)]  font-sans antialiased"
         )}
       >
-        <main className="relative">
-          <div className="">
-            <div className="narrow-container block-space-large">
-              {/* <Header /> */}
-              {children}
-            </div>
-          </div>
-        </main>
-        <Toaster />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <main className="">
+            <div className="narrow-container block-space-large">{children}</div>
+          </main>
+          <Toaster />
+        </ThemeProvider>
       </body>
       <GoogleAnalytics gaId="G-DENGLRLTGH" />
     </html>
