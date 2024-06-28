@@ -93,6 +93,10 @@
     @apply scroll-m-20 text-xl font-semibold tracking-tight;
   }
 
+  p {
+    @apply text-base md:text-lg mb-2;
+  }
+
   .lead {
     @apply text-xl text-muted-foreground;
   }
