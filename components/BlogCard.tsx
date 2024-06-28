@@ -17,7 +17,7 @@ const BlogCard = ({ post, classname }: BlogCardProps) => {
     <Link href={`/blogs/${post.uid}`}>
       <article
         className={clsx(
-          "hover:bg-muted dark:hover:bg-slate-800 mb-2 cursor-pointer transition-all duration-300 px-4 py-2 rounded-lg blog-card",
+          "hover:bg-muted mb-2 cursor-pointer transition-all duration-300 px-4 py-2 rounded-lg blog-card",
           classname
         )}
       >
