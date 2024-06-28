@@ -102,6 +102,11 @@
   }
 }
 
+::selection {
+  background-color: purple; /* Background color on selection */
+  color: white; /* Text color on selection (optional) */
+}
+
 body,
 html,
 p,

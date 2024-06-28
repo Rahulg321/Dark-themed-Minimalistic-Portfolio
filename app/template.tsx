@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import { useRef, useState } from "react";
 import { useRouter } from "next/router";
 import { usePathname } from "next/navigation";
+import { sendGAEvent } from "@next/third-parties/google";
 
 gsap.registerPlugin(useGSAP);
 
