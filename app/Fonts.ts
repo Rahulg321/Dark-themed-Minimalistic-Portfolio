@@ -1,4 +1,4 @@
-import { Poppins, Montserrat, Syne, Inter } from "next/font/google";
+import { Montserrat, Syne } from "next/font/google";
 
 export const syne = Syne({
   subsets: ["latin"],
