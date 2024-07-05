@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { montserrat, syne } from "./Fonts";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Toaster } from "@/components/ui/toaster";
+import DialogNavBar from "@/components/DialogNavBar";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -32,7 +33,7 @@ export default function RootLayout({
     >
       <body
         className={clsx(
-          "min-h-screen bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]  dark:bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)]  font-sans antialiased"
+          "min-h-screen bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem] dark:bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] font-sans antialiased"
         )}
       >
         <ThemeProvider
@@ -42,6 +43,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <main className="">
+            <div className="fixed bottom-6 left-6 z-30 md:top-2 md:left-2">
+              <DialogNavBar />
+            </div>
+
             <div className="narrow-container block-space-large">{children}</div>
           </main>
           <Toaster />

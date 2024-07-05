@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import profile from "@/public/rahulFrontPic.jpg";
 import { ModeToggle } from "./theme-toggle";
+import DialogNavBar from "./DialogNavBar";
 
 const Profile = () => {
   return (
