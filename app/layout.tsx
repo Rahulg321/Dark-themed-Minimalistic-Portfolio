@@ -43,7 +43,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <main className="">
-            <div className="fixed bottom-6 left-6 z-30 md:top-2 md:left-2">
+            <div className="fixed bottom-6 left-6 z-30 md:top-2 md:left-2 p-4">
               <DialogNavBar />
             </div>
 

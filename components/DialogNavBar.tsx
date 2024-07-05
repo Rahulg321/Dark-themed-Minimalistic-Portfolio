@@ -64,8 +64,18 @@ const DialogNavBar = () => {
                   icon={<Code />}
                   onClick={() => setDialogOpen(false)}
                 />
-                <NavLink label="Blogs" href="/blogs" icon={<FileText />} />
-                <NavLink label="Books" href="/books" icon={<BookOpen />} />
+                <NavLink
+                  label="Blogs"
+                  href="/blogs"
+                  icon={<FileText />}
+                  onClick={() => setDialogOpen(false)}
+                />
+                <NavLink
+                  label="Books"
+                  href="/books"
+                  icon={<BookOpen />}
+                  onClick={() => setDialogOpen(false)}
+                />
               </div>
               <span className="mt-4 mb-4 block font-bold text-muted-foreground">
                 Connect
@@ -126,7 +136,7 @@ export function NavLink({
   return (
     <Link
       href={href}
-      className="text-muted-foreground transition-all duration-200 ease-in-out hover:text-foreground hover:bg-muted flex items-start  gap-2 px-4 py-2 rounded-md"
+      className="text-muted-foreground transition-all duration-200 ease-in-out hover:text-foreground hover:bg-muted flex items-start  gap-2 px-4 py-3 rounded-md"
       onClick={onClick}
     >
       <div className="w-[0.5rem] h-[0.5rem]">{icon}</div>
