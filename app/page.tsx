@@ -62,30 +62,32 @@ export default async function Home() {
       <Profile />
       <div className="mb-12">
         <h2 className="mb-8">hey, I am Rahul 👋</h2>
-        <p className="text-muted-foreground">
-          I am a frontend developer, optimist, and community builder. I
-          currently specialize in building marketing websites for companies
-          using Next.js and Prismic. With two years of coding experience, I am
-          now a full-time freelancer actively seeking job opportunities.
-        </p>
+        <div className="text-lg lg:text-xl">
+          <p className="text-muted-foreground">
+            I am a frontend developer, optimist, and community builder. I
+            currently specialize in building marketing websites for companies
+            using Next.js and Prismic. With two years of coding experience, I am
+            now a full-time freelancer actively seeking job opportunities.
+          </p>
 
-        <p className="text-muted-foreground">
-          I am fine-tuning my freelancing business, sharing more online, and
-          leveling up my design skills. I enjoy crafting components and
-          experimenting new things.
-        </p>
-        <p className="text-muted-foreground">
-          If you would like to collaborate, feel free to send me an{" "}
-          <Link
-            href="mailto:rg5353070@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline text-black dark:text-white"
-          >
-            email
-          </Link>
-          .
-        </p>
+          <p className="text-muted-foreground">
+            I am fine-tuning my freelancing business, sharing more online, and
+            leveling up my design skills. I enjoy crafting components and
+            experimenting new things.
+          </p>
+          <p className="text-muted-foreground">
+            If you would like to collaborate, feel free to send me an{" "}
+            <Link
+              href="mailto:rg5353070@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline text-black dark:text-white"
+            >
+              email
+            </Link>
+            .
+          </p>
+        </div>
       </div>
 
       <div className="mb-12">

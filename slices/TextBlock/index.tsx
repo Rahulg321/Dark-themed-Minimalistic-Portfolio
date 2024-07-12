@@ -16,7 +16,7 @@ const TextBlock = ({ slice }: TextBlockProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="prose prose-base md:prose-lg lg:prose-xl prose-code:text-yellow-200 dark:prose-invert max-w-none w-full">
+      <div className="prose prose-base md:prose-lg lg:prose-xl dark:prose-invert max-w-none w-full ">
         <PrismicRichText field={slice.primary.content} />
       </div>
     </section>

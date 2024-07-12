@@ -21,8 +21,8 @@ const BlogCard = ({ post, classname }: BlogCardProps) => {
           classname
         )}
       >
-        <div className="flex flex-col md:flex-row md:justify-between md:items-center  md:gap-4">
-          <p className="">{title}</p>
+        <div className="flex flex-col md:flex-row md:justify-between md:items-center md:gap-4">
+          <p className="text-lg">{title}</p>
           <span className="text-muted-foreground">{date}</span>
         </div>
       </article>
