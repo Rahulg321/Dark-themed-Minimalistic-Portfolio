@@ -40,6 +40,7 @@ export const createClient = (config: prismicNext.CreateClientConfig = {}) => {
       process.env.NODE_ENV === "production"
         ? {
             next: { tags: ["prismic"] },
+            cache: "no-store",
           }
         : { next: { revalidate: 5 } },
     ...config,
