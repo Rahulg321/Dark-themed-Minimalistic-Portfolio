@@ -41,7 +41,7 @@ const DialogNavBar = () => {
           <Component className="size-6" />
         </div>
       </DialogTrigger>
-      <DialogContent className="px-4 py-4">
+      <DialogContent className="max-w-[70%] sm:max-w-[500px]">
         <DialogHeader>
           {/* <span className="mt-4 mb-4 block font-bold text-muted-foreground">
             Connect
@@ -77,10 +77,10 @@ const DialogNavBar = () => {
                   onClick={() => setDialogOpen(false)}
                 />
               </div>
-              <span className="mt-4 mb-4 block font-bold text-muted-foreground">
+              <span className="mt-4 mb-4 hidden md:block font-bold text-muted-foreground">
                 Connect
               </span>
-              <div className="space-y-2">
+              <div className="space-y-2 hidden md:block">
                 <ExternalNavSocialLink
                   label="Instagram"
                   href="https://www.instagram.com/_rahulgupta321_/"
