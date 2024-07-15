@@ -41,7 +41,7 @@ const DialogNavBar = () => {
           <Component className="size-6" />
         </div>
       </DialogTrigger>
-      <DialogContent className="max-w-[70%] sm:max-w-[500px]">
+      <DialogContent className="max-w-[70%] bg-background sm:max-w-[500px]">
         <DialogHeader>
           {/* <span className="mt-4 mb-4 block font-bold text-muted-foreground">
             Connect
