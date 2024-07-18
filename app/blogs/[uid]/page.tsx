@@ -8,8 +8,6 @@ import { FaArrowLeft } from "react-icons/fa6";
 import NewsletterComp from "@/components/NewsletterComp";
 import { formatPrismicTimestamp } from "@/lib/utils";
 import * as prismic from "@prismicio/client";
-import Head from "next/head";
-
 type Params = { uid: string };
 
 export default async function Page({ params }: { params: Params }) {
@@ -20,29 +18,30 @@ export default async function Page({ params }: { params: Params }) {
 
   const publishedDate = formatPrismicTimestamp(page.first_publication_date);
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: page.data.title as string,
-    author: {
-      "@type": "Person",
-      name: "Rahul Gupta",
-      // The full URL must be provided, including the website's domain.
-      url: new URL("https://rahulguptadev.in/about"),
-    },
-    image: prismic.asImageSrc(page.data.featured_image),
-    datePublished: page.first_publication_date,
-    dateModified: page.last_publication_date,
-  };
-
   return (
     <>
-      <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
-      </Head>
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: page.data.title,
+            datePublished: page.first_publication_date,
+            dateModified: page.first_publication_date,
+            description: page.data.meta_description,
+            image:
+              prismic.asImageSrc(page.data.meta_image) ||
+              "https://www.rahulguptadev.in/icon.png",
+            url: `https://rahulguptadev.in/blogs/${page.uid}`,
+            author: {
+              "@type": "Person",
+              name: "Rahul Gupta",
+            },
+          }),
+        }}
+      />
       <Link
         href="/blogs"
         className="text-muted-foreground flex items-center gap-2 mb-4"
@@ -75,9 +74,34 @@ export async function generateMetadata({
     .getByUID("blogpost", params.uid)
     .catch(() => notFound());
 
+  const { title, meta_description: description } = page.data;
+  const publicationTime = page.first_publication_date;
+
+  const image = page.data.featured_image;
+  const ogImage =
+    prismic.asImageSrc(image) || "https://www.rahulguptadev.in/icon.png";
+
   return {
-    title: page.data.meta_title,
-    description: page.data.meta_description,
+    title,
+    description,
+    openGraph: {
+      title: title as string,
+      description: description as string,
+      type: "article",
+      publishedTime: publicationTime,
+      url: `https://www.rahulguptadev.in/blogs/${page.uid}`,
+      images: [
+        {
+          url: ogImage,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: title as string,
+      description: description as string,
+      images: [ogImage],
+    },
   };
 }
 
